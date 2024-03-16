@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <synapse/tensor.h>
+#include "synapse/activation.h"
 using namespace synapse;
 
 int main()
@@ -11,12 +12,13 @@ int main()
 
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
-           t(i, j) = (i + 1) * (j + 1);
-           t1(i, j) = (i + 1) * (j + 1);
+           t(i, j) = (i + 1) + (j + 1);
+           t1(i, j) = (i + 1) + (j + 1);
         }
     }
 
     t3 = t.mul(t1, 0, 1);
+    // t3 = t.pointwise_mul(t1);
 
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {

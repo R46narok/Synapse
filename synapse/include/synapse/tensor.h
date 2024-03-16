@@ -25,6 +25,8 @@ namespace synapse {
         float& operator()(int x = 0, int y = 0, int z = 0, int w = 0);
 
         std::array<int, 4> dim() { return {m, n, p, q}; }
+
+        friend void activation_sigmoid(tensor* tensor);
     private:
         int m, n, p, q;
         float* elements;
