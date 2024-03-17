@@ -8,7 +8,7 @@
 #include <array>
 
 namespace synapse {
-    uint32_t dim_width(std::array<int, 4>& dim) {
+    inline uint32_t dim_width(std::array<int, 4> dim) {
         return dim[0] * dim[1] * dim[2] * dim[3];
     }
 }
